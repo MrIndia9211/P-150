@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="true" position="42 4 -23"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <a-asset-item id="train-obj" src="./models/Train/tinker.obj"></a-asset-item>
+      <a-asset-item id="train-mtl" src="./models/Train/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="ground" src="./models/railway_station/scene.gltf"></a-asset-item>
+
+      
+    </a-assets>
+    
+    
+  
+   
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <a-entity obj-model="obj: #train-obj; mtl: #train-mtl"  position="42 1.6 -28.8" rotation="-90 0 0" scale="0.05 0.05 0.05 "
+    ></a-entity>
+ 
+    <a-entity >
+        <a-entity
+          scale="120 120 90"
+          gltf-model="#ground"
+          position="55 1 -35"
+          rotation="0 0 0"
+        ></a-entity>
+    </a-entity>
+
+  </a-scene>
+</body>
+
+</html>
